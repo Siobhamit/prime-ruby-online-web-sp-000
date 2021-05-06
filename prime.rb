@@ -2,16 +2,10 @@
 def prime?(num)
  if num.negative? || num < 2 || num.is_a?(Float)
     false
- elsif num == 2 || 3
-    true
- else num >= 4
-   n = 2
-   while n != num
- if num % n == 0
-  return  false
-  else n += 1
-    num == n ? true : false
+else
+     (2..(num - 1)).each do |n|
+       return false if num % n == 0
+     end
+     true
    end
-  end
- end
 end
